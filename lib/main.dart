@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       ),
       home: ChangeNotifierProvider<BottomNavigationBarProvider>(
         // child: BottomBar();
-        child: BubbleBottomBar(),
+        child: Bubble_BottomBar(),
         builder: (BuildContext context) => BottomNavigationBarProvider(),
       ),
     );

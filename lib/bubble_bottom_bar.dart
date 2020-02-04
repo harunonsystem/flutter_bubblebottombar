@@ -6,30 +6,21 @@ import 'home.dart';
 import 'profile_page.dart';
 import 'setting.dart';
 
-class BubbleBottomBar extends StatefulWidget {
-  BubbleBottomBar({Key key, this.title}) : super(key: key);
+class Bubble_BottomBar extends StatefulWidget {
+  Bubble_BottomBar({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _BubbleBottomBarState createState() => _BubbleBottomBarState();
+  _Bubble_BottomBarState createState() => _Bubble_BottomBarState();
 }
 
-class _BubbleBottomBarState extends State<BubbleBottomBar> {
+class _Bubble_BottomBarState extends State<Bubble_BottomBar> {
   var currentTab = [
     HomePage(),
     ProfilePage(),
     Setting(),
   ];
-  int currentIndex;
-
-  void initState() {
-    super.initState();
-  }
-
-  void dispose() {
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,51 +29,48 @@ class _BubbleBottomBarState extends State<BubbleBottomBar> {
     return Scaffold(
       body: currentTab[provider.currentIndex],
       bottomNavigationBar: BubbleBottomBar(
-        opacity: .2,
-        currentIndex: currentIndex,
+        currentIndex: provider.currentIndex,
+        opacity: 0.2,
         onTap: (index) {
-          setState(() {
-            provider.currentIndex = index;
-          });
+          provider.currentIndex = index;
         },
         borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
         elevation: 10,
         fabLocation: BubbleBottomBarFabLocation.end, //new
         hasNotch: true, //new
-        hasInk: true, //new, gives a cute ink effect
         inkColor: Colors.white, //optional, uses theme color if not specified
         items: <BubbleBottomBarItem>[
           BubbleBottomBarItem(
-              backgroundColor: Colors.red,
+              backgroundColor: Colors.blue,
               icon: Icon(
                 Icons.home,
                 color: Colors.black,
               ),
               activeIcon: Icon(
                 Icons.home,
-                color: Colors.red,
+                color: Colors.blue,
               ),
               title: Text("Home")),
           BubbleBottomBarItem(
-              backgroundColor: Colors.red,
+              backgroundColor: Colors.pink,
               icon: Icon(
                 Icons.person,
                 color: Colors.black,
               ),
               activeIcon: Icon(
                 Icons.person,
-                color: Colors.red,
+                color: Colors.pink,
               ),
               title: Text("Profile")),
           BubbleBottomBarItem(
-              backgroundColor: Colors.red,
+              backgroundColor: Colors.green,
               icon: Icon(
                 Icons.settings,
                 color: Colors.black,
               ),
               activeIcon: Icon(
                 Icons.settings,
-                color: Colors.red,
+                color: Colors.green,
               ),
               title: Text("Setting")),
         ],
@@ -92,7 +80,7 @@ class _BubbleBottomBarState extends State<BubbleBottomBar> {
 }
 
 class BottomNavigationBarProvider with ChangeNotifier {
-  int _currentIndex = 0;
+  int _currentIndex = 1;
 
   get currentIndex => _currentIndex;
 

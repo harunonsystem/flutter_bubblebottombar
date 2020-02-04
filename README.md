@@ -2,6 +2,7 @@
 
 Flutterで画面下部にバーを設置して画面遷移しゅる✌️
 
+![screenshots](https://github.com/harunonsystem/flutter_bubblebottombar/blob/master/screenshots/flutter_bubblebottombar.gif "screenshots")
 ## Getting Started
 
 This project is a starting point for a Flutter application.

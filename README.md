@@ -1,6 +1,6 @@
 # flutter_bubblebottombar
 
-A new Flutter application.
+Flutterで画面下部にバーを設置して画面遷移しゅる✌️
 
 ## Getting Started
 

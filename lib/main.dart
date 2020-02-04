@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: ChangeNotifierProvider<BottomNavigationBarProvider>(
-        child: BottomBar(),
+        // child: BottomBar();
+        child: BubbleBottomBar(),
         builder: (BuildContext context) => BottomNavigationBarProvider(),
       ),
     );

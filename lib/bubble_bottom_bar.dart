@@ -1,3 +1,4 @@
+import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -5,16 +6,16 @@ import 'home.dart';
 import 'profile_page.dart';
 import 'setting.dart';
 
-class BottomBar extends StatefulWidget {
-  BottomBar({Key key, this.title}) : super(key: key);
+class BubbleBottomBar extends StatefulWidget {
+  BubbleBottomBar({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _BottomBarState createState() => _BottomBarState();
+  _BubbleBottomBarState createState() => _BubbleBottomBarState();
 }
 
-class _BottomBarState extends State<BottomBar> {
+class _BubbleBottomBarState extends State<BubbleBottomBar> {
   var currentTab = [
     HomePage(),
     ProfilePage(),
@@ -36,27 +37,6 @@ class _BottomBarState extends State<BottomBar> {
 
     return Scaffold(
       body: currentTab[provider.currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: provider.currentIndex,
-        onTap: (index) {
-          provider.currentIndex = index;
-        },
-        items: [
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.home),
-            title: new Text('Home'),
-          ),
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.person),
-            title: new Text('Profile'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            title: Text('Settings'),
-          )
-        ],
-      ),
-      /*
       bottomNavigationBar: BubbleBottomBar(
         opacity: .2,
         currentIndex: currentIndex,
@@ -107,8 +87,6 @@ class _BottomBarState extends State<BottomBar> {
               title: Text("Setting")),
         ],
       ),
-
-       */
     );
   }
 }

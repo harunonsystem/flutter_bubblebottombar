@@ -28,31 +28,4 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
     );
   }
-
-  Widget CompanyInfo() {
-    var listItem = ['会社情報', '利用規約', 'Privacy Policy', 'お問い合わせ'];
-
-    return ListView.builder(
-      itemBuilder: (BuildContext context, int index) {
-        return Container(
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(color: Colors.black38),
-              ),
-            ),
-            child: ListTile(
-              title: Text(
-                listItem[index],
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.pink,
-                    fontSize: 20.0),
-                textAlign: TextAlign.center,
-              ),
-              onTap: () {/* react to the tile being tapped */},
-            ));
-      },
-      itemCount: listItem.length,
-    );
-  }
 }
